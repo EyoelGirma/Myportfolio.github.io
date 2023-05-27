@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyoel Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+</head>
+<style>
+    .header {
+        position: relative;
+        height: 80vh;
+        min-height: 600px;
+        background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/header1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #fff;
+    }
+    
+    .header .container {
+        position: relative;
+        height: 100%;
+    }
+    
+    .header .header-content {
+        width: 100%;
+        position: absolute;
+        text-align: 10%;
+        left: 10%;
+        top: 55%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: #fff;
+    }
+    
+    .header .header-content .header-subtitle {
+        font-weight: 200;
+        font-size: 100;
+    }
+    
+    .header .header-content .header-title {
+        font-size: calc(40px + (120 - 40) * ((100vw - 300px) / (1600 - 300)));
+        font-weight: bold;
+        line-height: .7;
+        margin-bottom: 25px;
+        color: inherit;
+    }
+    
+    .header .header-content .header-mono {
+        letter-spacing: 5px;
+        font-weight: 500;
+        font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
+        margin-bottom: 40px;
+    }
+    
+    @media (max-width: 767.98px) {
+        .header {
+            height: 500px;
+            min-height: 500px;
+        }
+        .header .social-icons {
+            margin: auto;
+        }
+        .header .header-content {
+            padding: 20px;
+        }
+        .header .header-content .header-mono {
+            letter-spacing: 2px;
+        }
+    }
+    
+    .header-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        opacity: .8;
+        color: #212529;
+    }
+    
+    .header-mini {
+        min-height: 24rem;
+        height: 24rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        background: #fcbec6;
+    }
+    
+    .section {
+        padding: 80px 0;
+    }
+    
+    .section.bg-custom-gray {
+        background: rgba(242, 244, 247, 0.15);
+    }
+    
+    .about-section {
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .about-section .about-card {
+        padding: 60px;
+        border-right: 1px solid #dee2e6;
+    }
+    
+    .about-section .about-card:last-child {
+        border-right: none;
+    }
+    
+    .contact {
+        position: relative;
+        min-height: 700px;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 40px 0;
+    }
+    
+    @media (max-width: 991.98px) {
+        .contact {
+            padding: 300px 0 0;
+        }
+        .contact .contact-form-card {
+            border-bottom: 1px solid #dee2e6;
+        }
+        .contact .contact-form-card,
+        .contact .contact-info-card {
+            min-height: auto !important;
+        }
+    }
+    
+    .navbar {
+        box-shadow: 0 1px 10px rgba(13, 219, 51, 0.18);
+        -webkit-box-shadow: 0 1px 10px rgba(13, 9, 50, 0.18);
+    }
+    
+    .navbar .nav-link {
+        font-weight: bold;
+        font-family: "Dosis", "Open Sans", sans-serif;
+    }
+    
+    .navbar .brand {
+        text-align: center;
+    }
+    
+    .navbar .brand .brand-txt .brand-subtitle {
+        font-size: 13px;
+        color: #730707;
+    }
+    
+    @media (max-width: 991.98px) {
+        .navbar .brand {
+            display: none;
+        }
+    }
+    
+    .navbar.affix .brand-txt {
+        bottom: 0;
+        opacity: 1;
+    }
+</style>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#resume" class="nav-link">Resume</a>
+                </li>
+                <li class="nav-item last-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <header class="header" img src="img/header1.jpg" alt="">>
+        <div class="header-content">
+            <h4 class="header-subtitle">Hello, I am</h4>
+            &nbsp&nbsp
+            <h1 class="header-title"> Eyoel Girma</h1>
+            <br>
+            <h6 class="header-mono">Learning to become Web Developer</h6>
+            <button class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i>Print Resume</button>
+        </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div id="about" class="row about-section">
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">Who am I ?</h3>
+                <span class="line mb-5"></span>
+                <h5 class="mb-3">A Web Designer / Developer </h5>
+                <p class="mt-20"></p>
+
+            </div>
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">Personal Info</h3>
+                <span class="line mb-5"></span>
+                <ul class="mt40 info list-unstyled">
+                    <li><span>Birthdate</span> : 09/13/2000</li>
+                    <li><span>Email</span> : eyoelgirma77@gmail.com.com</li>
+                    <li><span>Phone</span> : +251975215077</li>
+                </ul>
+
+            </div>
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">My Expertise</h3>
+                <span class="line mb-5"></span>
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>Web Development</h6>
+                        <p class="subtitle"></p>
+                        <hr>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <main>
+            <section class="section" id="resume">
+                <div class="container">
+                    <h2 class="mb-5"><span class="text-danger">MY</span> Resime</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="mt-2">
+                                        <h4>Expertise</h4>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="title text-danger">on art</h6>
+                                    <p>Participate in different matches</p>
+                                    <p class="subtitle">Like: Moinco car Design</p>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="title text-danger">Hardware Mentainance</h6>
+                                    <p></p>
+                                    <p class="subtitle">Have certeficate on hardware Mentainance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="mt-2">
+                                        <h4>Education</h4>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="title text-danger">ACT Collage</h6>
+                                    <p>ACT Collage</p>
+                                    <p class="subtitle">Learning to become Computer Sience</p>
+                                    <hr>
+                                    <h6 class="title text-danger">2013</h6>
+                                    <p>High School Deploma</p>
+                                    <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae, cupiditate ullam dolor ratione repellendus.aliquid repudiandae saepe!.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="pull-left">
+                                        <h4 class="mt-2">Skills</h4>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                                <div class="card-body pb-2">
+                                    <h6>JavaScript</h6>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6>PHP</h6>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6>SQL</h6>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="pull-left">
+                                        <h4 class="mt-2">Languages</h4>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                                <div class="card-body pb-2">
+                                    <h6>English</h6>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6>Amharic</h6>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section bg-dark py-5">
+                <div class="container text-center">
+                    <h2 class="text-light mb-5 font-weight-normal">I Am Available For FreeLance</h2>
+                    <button class="btn bg-primary w-lg">Hire me</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <iframe aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-form-card">
+                        <h4 class="contact-title">Send a message</h4>
+                        <form action="">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Name *" required="">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="email" placeholder="Email *" required="">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id=" placeholder=" message="" * "=" " rows="7 " required=" "></textarea>
+                            </div>
+                            <div class="form-group ">
+                                <button type="submit " class="form-control btn btn-primary ">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 ">
+                    <div class="contact-info-card ">
+                        <h4 class="contact-title ">Get in touch</h4>
+                        <div class="row mb-lg-4 ">
+                            <div class="col-1 pt-1 mr-1 ">
+                                <i class="ti-mobile icon-md "></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h6 class="d-inline ">Phone : <br> <span class="text-muted ">+251975215077</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mb-2 ">
+                            <div class="col-1 pt-1 mr-1 ">
+                                <i class="ti-map-alt icon-md "></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h6 class="d-inline ">Address :<br> <span class="text-muted ">Ethiopia,Bole,Goro near Police Station</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mb-2 ">
+                            <div class="col-1 pt-1 mr-1 ">
+                                <i class="ti-envelope icon-md "></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h6 class="d-inline ">Email :<br> <span class="text-muted ">eyoelgirma1994@gmail.com</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js " integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3 " crossorigin="anonymous "></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js " integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz " crossorigin="anonymous "></script>
+</body>
+
+</html>
